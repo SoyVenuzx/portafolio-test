@@ -1,11 +1,78 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
+import Badge from '../components/Badge.astro';
+import GitHub from '../icons/GitHub.astro';
+import Linkedin from '../icons/LinkedIn.astro';
+import WhatsApp from '../icons/WhatsApp.astro';
+import Gmail from '../icons/Gmail.astro';
 ---
 
 <Layout>
-	<Welcome />
+  <main>
+    <section class='w-full lg:w-[740px] mx-auto py-20'>
+      <img
+        class='rounded-full w-20 h-20 mb-5'
+        src='https://avatars.githubusercontent.com/u/77865264?v=4'
+        alt='Logo'
+      />
+
+      <h1 class='font-bold text-5xl flex flex-row gap-x-3 pb-3'>
+        Hey, I'm <span class='font-bold'>Anto</span>
+        <a
+          href='https://linkedin.com/in/shouyt9'
+          target='_blank'
+          rel='noopener'
+          class='flex justify-center items-center'
+        >
+          <Badge>Available for hire</Badge>
+        </a>
+      </h1>
+      <h2 class='text-2xl opacity-80 text-wrap'>
+        <span>I'm a web developer,</span>
+        <span class='text-yellow-200/90'>
+          specializing in front-end technologies. Based in Managua, Nicaragua.</span
+        >
+        <span class='opacity-90'
+          >I specialize in building responsive and accessible web applications.</span
+        >
+      </h2>
+
+      <ul class='flex gap-4 mt-6'>
+        <li>
+          <a href='https://github.com/SoyVenuzx' target='_blank' rel='noopener'>
+            <GitHub class='w-5 h-5' />
+          </a>
+        </li>
+        <li>
+          <a
+            href='https://linkedin.com/in/shouyt9'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Linkedin class='w-5 h-5' />
+          </a>
+        </li>
+        <li>
+          <a
+            href='https://wa.me/50588888888'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <WhatsApp class='w-5 h-5' />
+          </a>
+        </li>
+        <li>
+          <a
+            href='https://mail.google.com/mail/u/0/?fs=1&to=anto@example.com&su=Subject&body=Body&bcc=other@example.com'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Gmail class='w-5 h-5' />
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
 </Layout>
