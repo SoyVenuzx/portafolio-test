@@ -5,9 +5,35 @@ import GitHub from '../icons/GitHub.astro';
 import Linkedin from '../icons/LinkedIn.astro';
 import WhatsApp from '../icons/WhatsApp.astro';
 import Gmail from '../icons/Gmail.astro';
+
+const socialLinks = [
+  {
+    href: 'https://github.com/SoyVenuzx',
+    icon: GitHub,
+    title: 'GitHub',
+  },
+  {
+    href: 'https://linkedin.com/in/shouyt9',
+    icon: Linkedin,
+    title: 'LinkedIn',
+  },
+  {
+    href: 'https://wa.me/50588888888',
+    icon: WhatsApp,
+    title: 'WhatsApp',
+  },
+  {
+    href: 'https://mail.google.com/mail/u/0/?fs=1&to=anto@example.com&su=Subject&body=Body&bcc=other@example.com',
+    icon: Gmail,
+    title: 'Gmail',
+  },
+];
 ---
 
-<Layout>
+<Layout
+  title='Portafolio - Anto Dev | Home Page'
+  description='Welcome to my personal portfolio website. Explore my projects, skills, and get in touch with me.'
+>
   <main>
     <section class='w-full lg:w-[740px] mx-auto py-20'>
       <img
@@ -38,38 +64,21 @@ import Gmail from '../icons/Gmail.astro';
       </h2>
 
       <ul class='flex gap-4 mt-6'>
-        <li>
-          <a href='https://github.com/SoyVenuzx' target='_blank' rel='noopener'>
-            <GitHub class='w-5 h-5' />
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://linkedin.com/in/shouyt9'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Linkedin class='w-5 h-5' />
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://wa.me/50588888888'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <WhatsApp class='w-5 h-5' />
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://mail.google.com/mail/u/0/?fs=1&to=anto@example.com&su=Subject&body=Body&bcc=other@example.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Gmail class='w-5 h-5' />
-          </a>
-        </li>
+        {
+          socialLinks.map((link) => (
+            <li class='flex items-center gap-3 group'>
+              <a href={link.href} target='_blank' rel='noopener'>
+                <link.icon class='w-5 h-5' />
+              </a>
+              <span
+                class='max-w-0 overflow-hidden opacity-0 translate-x-2 group-hover:max-w-xs group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 whitespace-nowrap'
+                style='display: inline-block;'
+              >
+                {link.title}
+              </span>
+            </li>
+          ))
+        }
       </ul>
     </section>
   </main>
